@@ -1,0 +1,54 @@
+name: Support request
+description: Ask a question or report a problem using fictional examples only.
+title: "[Support] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **This is a public support channel.** Everything you write can be read by anyone.
+        Do not attach invoices, receipts, sales reports, backups, business figures, customer or staff details, payment information, or unredacted screenshots. Use made-up examples. Do not upload source documents or app data files.
+        For billing or refunds, use https://reportaproblem.apple.com/. Manage subscriptions with Apple at https://apps.apple.com/account/subscriptions.
+  - type: checkboxes
+    id: public
+    attributes:
+      label: Public information only
+      options:
+        - label: I understand this post is public and have removed sensitive and identifying information.
+          required: true
+  - type: dropdown
+    id: topic
+    attributes:
+      label: What do you need help with?
+      options:
+        - Capture and recognition
+        - Ingredient or recipe costs
+        - Production planning or allergens
+        - Records and backups
+        - Subscription access
+        - Privacy question
+        - Other app question
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: App version
+      description: Find this in Kitchen Margin Settings → About. Do not include any device serial number or account identifier.
+      placeholder: "Example: 1.0 (1)"
+  - type: input
+    id: device
+    attributes:
+      label: Device model and iOS version
+      placeholder: "Example: iPhone 16, iOS 26"
+  - type: textarea
+    id: problem
+    attributes:
+      label: Question or problem
+      description: Describe the problem with fictional examples. No private figures, source documents, app backups, or identifying details.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps and expected result
+      description: If reporting a bug, tell us the steps, what you expected, and what happened instead. Leave out private information and do not attach data files.

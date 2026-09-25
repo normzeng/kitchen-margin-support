@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Subscription billing or refund
+    url: https://reportaproblem.apple.com/
+    about: Apple handles subscription payments and refund requests.
+  - name: Kitchen Margin help
+    url: https://normzeng.github.io/kitchen-margin-support/support/
+    about: Capture, costing, backups, and subscription guidance.

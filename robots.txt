@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://normzeng.github.io/kitchen-margin-support/sitemap.xml
