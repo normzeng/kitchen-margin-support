@@ -8,3 +8,6 @@ a[href^="mailto:"]{overflow-wrap:anywhere}
 
 .app-preview video{display:block;width:100%;height:auto;aspect-ratio:9/16;border-radius:14px;background:#18251f}.video-grid.video-pair{grid-template-columns:repeat(2,minmax(0,1fr))}@media(max-width:760px){.video-grid.video-pair{grid-template-columns:1fr}}
 @media(max-width:760px){html[lang="ko"] .product-hero h1{font-size:clamp(1.9rem,8vw,2.5rem)}}
+
+/* Café costing articles */
+.blog-index{display:grid;gap:34px}.blog-index .card h2{font-weight:650;font-size:1.5rem;line-height:1.35;letter-spacing:-.025em}.blog-index .card h2 a{text-decoration:none}.blog-index .card-index{margin-bottom:10px}.blog-article>article>p{margin-top:24px}.blog-article h1{overflow-wrap:break-word}.blog-article .guide-section h2{font-size:clamp(1.45rem,3vw,1.9rem)}.blog-screens{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-block:26px}.blog-screens figure{margin:0;min-width:0}.blog-screens img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:12px}.blog-screens figcaption{font-size:.8rem;color:var(--muted);line-height:1.55;margin-top:14px}.blog-article .end-note li{margin-block:14px}@media(max-width:600px){.blog-screens{grid-template-columns:1fr;gap:30px}.blog-screens figure{max-width:320px;justify-self:center}.blog-article h1{font-size:clamp(2rem,8vw,2.7rem)}}
