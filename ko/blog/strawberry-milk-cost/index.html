@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>식자재·포장재 비용까지 포함한 메뉴 원가 계산 실전 — Kitchen Margin</title>
+  <meta name="description" content="딸기 손질 수율과 쇼핑백 구성을 구분합니다. 봉투 없음 1,740원, 두 잔 한 봉투는 잔당 1,790원입니다.">
+  <meta name="color-scheme" content="light">
+  <link rel="canonical" href="https://normzeng.github.io/kitchen-margin-support/ko/blog/strawberry-milk-cost/">
+  <link rel="alternate" hreflang="en" href="https://normzeng.github.io/kitchen-margin-support/blog/strawberry-milk-cost/">
+  <link rel="alternate" hreflang="ko" href="https://normzeng.github.io/kitchen-margin-support/ko/blog/strawberry-milk-cost/">
+  <link rel="alternate" hreflang="x-default" href="https://normzeng.github.io/kitchen-margin-support/blog/strawberry-milk-cost/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="식자재·포장재 비용까지 포함한 메뉴 원가 계산 실전 — Kitchen Margin">
+  <meta property="og:description" content="딸기 손질 수율과 쇼핑백 구성을 구분합니다. 봉투 없음 1,740원, 두 잔 한 봉투는 잔당 1,790원입니다.">
+  <meta property="og:url" content="https://normzeng.github.io/kitchen-margin-support/ko/blog/strawberry-milk-cost/">
+  <meta property="og:image" content="https://normzeng.github.io/kitchen-margin-support/assets/media/marketing-preview-ko.webp">
+  <link rel="stylesheet" href="../../../assets/site.css">
+</head><body>
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+<header class="site-header"><div class="shell header-inner">
+  <a class="brand" href="../../" aria-label="Kitchen Margin 홈"><span class="brand-mark" aria-hidden="true">km</span><span>Kitchen Margin</span></a>
+  <nav aria-label="주 메뉴">
+    <a href="../" aria-current="true">카페 원가 연구소</a>
+    <a href="../../support/">고객 지원</a>
+    <a href="../../../blog/strawberry-milk-cost/" lang="en">English</a>
+  </nav>
+</div></header>
+<main id="main" class="shell guide-document blog-article"><article><p class="eyebrow">카페 원가 연구소</p><h1>식자재·포장재 비용까지 포함한 메뉴 원가 계산 실전</h1>
+<p class="lead">식자재·포장재를 포함한 메뉴 원가는 실제로 쓸 수 있는 재료의 단가에 사용량을 곱하고, 주문에 쓰는 포장재 비용을 더해 계산합니다. 딸기 우유 한 잔으로 손질 손실과 포장 구성을 확인해 보겠습니다.</p>
+<p class="scope-note">이 글은 키친마진 개발자가 작성한 원가 계산 예시입니다. 모든 금액·수량은 설명용 가정이며 실제 매장 자료가 아닙니다.</p>
+<div class="table-wrap"><table class="cost-table"><caption>예시 계산 결과</caption><thead><tr><th scope="col">계산 항목</th><th scope="col">결과</th></tr></thead><tbody>
+<tr><th scope="row">한 잔 식재료</th><td>1,550원</td></tr>
+<tr><th scope="row">봉투 없는 한 잔</th><td>1,740원</td></tr>
+<tr><th scope="row">두 잔에 쇼핑백 하나(100원)</th><td>합계 3,580원 / 잔당 1,790원</td></tr>
+<tr><th scope="row">한 잔에 쇼핑백 하나(100원)</th><td>1,840원</td></tr>
+</tbody></table></div>
+<section class="guide-section" id="inputs"><h2>직접 입력하는 구매·사용량 예시</h2><p>구매 가격은 모두 부가세 포함 설명용 가정입니다. 포장재는 묶음 전체의 수량과 가격이며 ea는 개수 단위입니다. 우리 매장의 실제 구매 값으로 바꿔 입력하세요.</p><div class="table-wrap"><table class="cost-table"><caption>직접 입력하는 구매·사용량 예시</caption><thead><tr><th scope="col">재료·포장재</th><th scope="col">구매 포장 전체 수량·가격</th><th scope="col">한 잔 사용량</th><th scope="col">사용분 원가</th></tr></thead><tbody>
+<tr><th scope="row">딸기</th><td>1 kg · ₩9,000</td><td>80 g</td><td>₩800</td></tr>
+<tr><th scope="row">우유</th><td>1 L · ₩3,000</td><td>180 mL</td><td>₩540</td></tr>
+<tr><th scope="row">시럽</th><td>1 L · ₩8,000</td><td>20 mL</td><td>₩160</td></tr>
+<tr><th scope="row">얼음</th><td>1 kg · ₩250</td><td>200 g</td><td>₩50</td></tr>
+<tr><th scope="row">컵</th><td>100 ea · ₩10,000</td><td>1 ea</td><td>₩100</td></tr>
+<tr><th scope="row">뚜껑</th><td>100 ea · ₩4,000</td><td>1 ea</td><td>₩40</td></tr>
+<tr><th scope="row">빨대</th><td>100 ea · ₩2,000</td><td>1 ea</td><td>₩20</td></tr>
+<tr><th scope="row">홀더</th><td>100 ea · ₩3,000</td><td>1 ea</td><td>₩30</td></tr>
+<tr><th scope="row">쇼핑백</th><td>100 ea · ₩10,000</td><td>0 / 1 ea</td><td>₩0 / ₩100</td></tr>
+</tbody></table></div><p class="muted">딸기는 가용수율 90%, 손질 후 80g 기준입니다. 쇼핑백 행만 주문당 수량·비용이며, 나머지 행은 한 잔 기준입니다. 두 잔 주문에는 나머지 사용량을 두 배로 넣고 쇼핑백 1개를 더합니다.</p></section>
+<section class="guide-section"><h2>1. 손질 수율을 먼저 반영합니다</h2><p>딸기 1kg을 9,000원에 샀고 꼭지·상한 부분을 제거한 뒤 900g이 남았다면 가용수율은 90%입니다. 사용 가능한 1g의 원가는 9,000 ÷ 900 = 10원, 손질한 딸기 80g을 쓰면 딸기값은 800원입니다. 손질 전후 무게를 같은 저울로 재서 기록해 두세요. 손질 손실을 이미 반영했으니 같은 손실을 다시 더하지 않습니다.</p></section>
+<section class="guide-section"><h2>2. 나머지 식자재를 더합니다</h2><p>우유 1L 3,000원 중 180mL = 540원, 시럽 1L 8,000원 중 20mL = 160원, 얼음 1kg 250원 중 200g = 50원. 식자재비는 800 + 540 + 160 + 50 = 1,550원입니다.</p></section>
+<section class="guide-section"><h2>3. 포장재와 주문 구성을 구분합니다</h2><p>컵 100원, 뚜껑 40원, 빨대 20원, 홀더 30원 = 190원. 봉투 없는 한 잔 원가는 1,740원입니다. 매장용 잔에는 일회용 포장비를 그대로 붙이지 않습니다. 쇼핑백(100원)에 두 잔을 담는 주문이라면 합계 3,580원, 잔당 1,790원입니다. 한 잔을 쇼핑백에 담으면 1,840원이니 주문 구성을 구분해야 합니다.</p></section>
+<p>실전에서는 레시피를 &#x27;두 스푼&#x27; 대신 &#x27;80g&#x27;처럼 재현 가능한 단위로 기록하고, 손질·조리 손실을 확인하세요. 포장재는 실제 발주 수량과 전체 가격으로 낱개 단가를 구합니다. 자주 쓰거나 가격 변동이 큰 재료부터 정기적으로 단가를 점검해 보세요. 주기는 매장 상황에 맞추면 됩니다.</p>
+<p>모든 매입액은 부가세 포함 기준입니다. 이 계산은 식자재·포장재 기준이며 인건비, 임차료, 결제 수수료 등은 포함하지 않습니다.</p>
+<section class="guide-section" id="app"><h2>앱으로 따라 계산하기</h2><p>통화를 KRW로 맞추고 재료 설정에서 딸기 1kg·9,000원, &#x27;가용수율&#x27; 90%를 저장하세요. 메뉴 &#x27;딸기 우유(포장)&#x27;의 &#x27;배치당 제공 횟수&#x27;를 1로 두고, 딸기 사용량의 기준을 &#x27;손질 후&#x27;·80g으로 맞춥니다. 우유·시럽·얼음·포장재도 위 구매 수량과 전체 가격으로 등록한 뒤 사용량을 넣으면 봉투 없는 한 잔 원가 1,740원입니다. 두 잔을 한 쇼핑백에 담는 별도 메뉴는 제공 횟수 2, 재료·기본 포장재 사용량 두 배, 쇼핑백 1개로 입력합니다. 자세한 순서는 키친마진 한국어 사용 가이드에서 확인할 수 있습니다.</p><p><a class="text-link" href="../../guides/latte-cost/">한국어 단계별 사용 가이드 열기 →</a></p></section>
+<section class="guide-section" aria-labelledby="screens"><h2 id="screens">앱 화면으로 확인하기</h2><p class="muted">출시된 1.2 앱을 iPhone 시뮬레이터에서 직접 캡처한 한국어 화면입니다. 입력값은 설명용 가정이며 실제 매장 자료가 아닙니다.</p><div class="blog-screens"><figure><a href="../../../assets/blog/strawberry-yield.png"><img src="../../../assets/blog/strawberry-yield.png" width="1206" height="2622" loading="lazy" decoding="async" alt="딸기 1kg·9,000원, 가용수율 90%. 손질 후 남는 비율을 저장합니다."></a><figcaption>딸기 1kg·9,000원, 가용수율 90%. 손질 후 남는 비율을 저장합니다.</figcaption></figure>
+<figure><a href="../../../assets/blog/strawberry-amount.png"><img src="../../../assets/blog/strawberry-amount.png" width="1206" height="2622" loading="lazy" decoding="async" alt="딸기 80g은 손질 후 기준입니다. 구매 상태의 무게와 구분합니다."></a><figcaption>딸기 80g은 손질 후 기준입니다. 구매 상태의 무게와 구분합니다.</figcaption></figure>
+<figure><a href="../../../assets/blog/strawberry-shared-bag-result.png"><img src="../../../assets/blog/strawberry-shared-bag-result.png" width="1206" height="2622" loading="lazy" decoding="async" alt="두 잔에 쇼핑백 하나를 쓴 메뉴의 잔당 원가 1,790원이 표시됩니다. 주문 원가 3,580원은 이 잔당 금액에 2를 곱한 계산값입니다."></a><figcaption>두 잔에 쇼핑백 하나를 쓴 메뉴의 잔당 원가 1,790원이 표시됩니다. 주문 원가 3,580원은 이 잔당 금액에 2를 곱한 계산값입니다.</figcaption></figure></div></section>
+<p>iPhone 앱 Kitchen Margin(키친마진)은 입력한 식자재와 포장재로 1인분 원가를 자동 계산합니다.</p>
+</article><aside class="end-note"><h2>함께 읽기</h2><ul><li><a href="../americano-cost/">카페 음료 원가 계산법 — 아메리카노 한 잔의 진짜 원가</a></li><li><a href="../brownie-pricing/">디저트 메뉴 원가율 계산과 가격 책정 방법</a></li></ul><a class="text-link" href="../">전체 글 →</a></aside></main>
+<footer class="site-footer"><div class="shell footer-inner">
+  <p>Kitchen Margin · 개발자 Norman Zeng</p>
+  <nav aria-label="하단 메뉴">
+    <a href="https://apps.apple.com/kr/app/kitchen-margin/id6816125261">App Store에서 다운로드</a>
+    <a href="../../support/">고객 지원</a>
+    <a href="../../privacy/">개인정보 처리방침</a>
+    <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">이용 약관</a>
+  </nav>
+</div></footer>
+</body></html>
