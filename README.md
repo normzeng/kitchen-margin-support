@@ -46,9 +46,8 @@ hosting or validate external services.
 1. Merge the separate privacy-disclosure PR first and wait for Pages to
    publish it. Verify the English, Korean and Traditional Chinese policies
    distinguish the GitHub copy from branded marketing analytics and link to
-   the Black Vale website privacy notice. This PR is based on the disclosure
-   branch for review; retarget it to `main` after that PR merges and refresh
-   its branch if needed before final review.
+   the Black Vale website privacy notice. The metadata PR must target `main`
+   with the disclosure included before final review and publication.
 2. Merge the router PR, then perform its separately approved manual
    deployment, pointing Kitchen Margin's branded host at the **currently
    published** support site. Verify root, support, privacy, existing locales
