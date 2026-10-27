@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://normzeng.github.io/kitchen-margin-support/</loc></url>
-  <url><loc>https://normzeng.github.io/kitchen-margin-support/ko/</loc></url>
-  <url><loc>https://normzeng.github.io/kitchen-margin-support/guides/latte-cost/</loc></url>
-  <url><loc>https://normzeng.github.io/kitchen-margin-support/ko/guides/latte-cost/</loc></url>
-  <url><loc>https://normzeng.github.io/kitchen-margin-support/support/</loc></url>
-  <url><loc>https://normzeng.github.io/kitchen-margin-support/privacy/</loc></url>
-  <url><loc>https://normzeng.github.io/kitchen-margin-support/ko/support/</loc></url>
-  <url><loc>https://normzeng.github.io/kitchen-margin-support/ko/privacy/</loc></url>
+  <url><loc>https://kitchenmargin.blackvaletechnologies.com/</loc></url>
+  <url><loc>https://kitchenmargin.blackvaletechnologies.com/ko/</loc></url>
+  <url><loc>https://kitchenmargin.blackvaletechnologies.com/guides/latte-cost/</loc></url>
+  <url><loc>https://kitchenmargin.blackvaletechnologies.com/ko/guides/latte-cost/</loc></url>
+  <url><loc>https://kitchenmargin.blackvaletechnologies.com/support/</loc></url>
+  <url><loc>https://kitchenmargin.blackvaletechnologies.com/privacy/</loc></url>
+  <url><loc>https://kitchenmargin.blackvaletechnologies.com/ko/support/</loc></url>
+  <url><loc>https://kitchenmargin.blackvaletechnologies.com/ko/privacy/</loc></url>
+  <url><loc>https://kitchenmargin.blackvaletechnologies.com/zh-Hant/</loc></url>
+  <url><loc>https://kitchenmargin.blackvaletechnologies.com/zh-Hant/support/</loc></url>
+  <url><loc>https://kitchenmargin.blackvaletechnologies.com/zh-Hant/privacy/</loc></url>
 </urlset>
