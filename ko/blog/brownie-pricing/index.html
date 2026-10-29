@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>디저트 메뉴 원가율 계산과 가격 책정 방법 — Kitchen Margin</title>
+  <meta name="description" content="브라우니 한 판의 원가를 판매 가능한 수량으로 나누고 포장비와 목표 원가율로 가격을 검토합니다.">
+  <meta name="color-scheme" content="light">
+  <link rel="canonical" href="https://kitchenmargin.blackvaletechnologies.com/ko/blog/brownie-pricing/">
+  <link rel="alternate" hreflang="en" href="https://kitchenmargin.blackvaletechnologies.com/blog/brownie-pricing/">
+  <link rel="alternate" hreflang="ko" href="https://kitchenmargin.blackvaletechnologies.com/ko/blog/brownie-pricing/">
+  <link rel="alternate" hreflang="x-default" href="https://kitchenmargin.blackvaletechnologies.com/blog/brownie-pricing/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="디저트 메뉴 원가율 계산과 가격 책정 방법 — Kitchen Margin">
+  <meta property="og:description" content="브라우니 한 판의 원가를 판매 가능한 수량으로 나누고 포장비와 목표 원가율로 가격을 검토합니다.">
+  <meta property="og:url" content="https://kitchenmargin.blackvaletechnologies.com/ko/blog/brownie-pricing/">
+  <meta property="og:image" content="https://kitchenmargin.blackvaletechnologies.com/assets/media/marketing-preview-ko.webp">
+  <link rel="stylesheet" href="../../../assets/site.css">
+</head><body>
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+<header class="site-header"><div class="shell header-inner">
+  <a class="brand" href="../../" aria-label="Kitchen Margin 홈"><img class="brand-mark" src="../../../assets/kitchen-margin.jpg" width="44" height="44" alt=""><span>Kitchen Margin</span></a>
+  <nav aria-label="주 메뉴">
+    <a href="../" aria-current="true">카페 원가 연구소</a>
+    <a href="../../support/">고객 지원</a>
+    <a href="../../../blog/brownie-pricing/" lang="en">English</a>
+  </nav>
+</div></header>
+<main id="main" class="shell guide-document blog-article"><article><p class="eyebrow">카페 원가 연구소</p><h1>디저트 메뉴 원가율 계산과 가격 책정 방법</h1>
+<p class="lead">디저트 원가율은 한 개의 식재료·포장재 원가를 판매가로 나눈 비율입니다. 목표 원가율을 정했다면 원가를 그 비율로 나눠 계산상 판매가를 구할 수 있습니다. 브라우니로 계산해 보겠습니다.</p>
+<p class="scope-note">이 글은 키친마진 개발자가 작성한 원가 계산 예시입니다. 모든 금액·수량·목표 원가율은 설명용 가정이며 실제 매장 자료나 권장 가격이 아닙니다.</p>
+<div class="table-wrap"><table class="cost-table"><caption>예시 계산 결과</caption><thead><tr><th scope="col">계산 항목</th><th scope="col">결과</th></tr></thead><tbody>
+<tr><th scope="row">한 판 식재료</th><td>9,600원</td></tr>
+<tr><th scope="row">판매용 10개의 포장재</th><td>2,400원</td></tr>
+<tr><th scope="row">전체 배치 / 판매 가능 10개</th><td>12,000원 / 개당 1,200원</td></tr>
+<tr><th scope="row">판매가 4,000원 기준 원가율</th><td>30%</td></tr>
+</tbody></table></div>
+<section class="guide-section" id="inputs"><h2>직접 입력하는 구매·사용량 예시</h2><p>구매 가격은 모두 부가세 포함 설명용 가정입니다. 포장재는 묶음 전체의 수량과 가격이며 ea는 개수 단위입니다. 우리 매장의 실제 구매 값으로 바꿔 입력하세요.</p><div class="table-wrap"><table class="cost-table"><caption>직접 입력하는 구매·사용량 예시</caption><thead><tr><th scope="col">재료·포장재</th><th scope="col">구매 포장 전체 수량·가격</th><th scope="col">전체 배치 사용량</th><th scope="col">배치 원가</th></tr></thead><tbody>
+<tr><th scope="row">버터</th><td>1 kg · ₩12,000</td><td>200 g</td><td>₩2,400</td></tr>
+<tr><th scope="row">초콜릿</th><td>1 kg · ₩16,000</td><td>300 g</td><td>₩4,800</td></tr>
+<tr><th scope="row">밀가루</th><td>1 kg · ₩2,500</td><td>200 g</td><td>₩500</td></tr>
+<tr><th scope="row">설탕</th><td>1 kg · ₩2,000</td><td>200 g</td><td>₩400</td></tr>
+<tr><th scope="row">달걀</th><td>30 ea · ₩9,000</td><td>4 ea</td><td>₩1,200</td></tr>
+<tr><th scope="row">코코아</th><td>100 g · ₩1,000</td><td>30 g</td><td>₩300</td></tr>
+<tr><th scope="row">종이 받침</th><td>100 ea · ₩4,000</td><td>10 ea</td><td>₩400</td></tr>
+<tr><th scope="row">상자</th><td>100 ea · ₩18,000</td><td>10 ea</td><td>₩1,800</td></tr>
+<tr><th scope="row">스티커</th><td>100 ea · ₩2,000</td><td>10 ea</td><td>₩200</td></tr>
+</tbody></table></div><p class="muted">한 판에서 판매 가능한 10개 기준입니다. 재료와 포장재 모두 전체 배치 사용량을 입력합니다.</p></section>
+<section class="guide-section"><h2>1. 한 판의 식재료비를 합칩니다</h2><p>버터 200g 2,400원(1kg 12,000원 기준), 초콜릿 300g 4,800원(1kg 16,000원 기준), 밀가루 200g 500원, 설탕 200g 400원, 달걀 4개 1,200원, 코코아 30g 300원 = 9,600원입니다. 장식이나 소스가 있다면 함께 넣으세요. 봉지 전체 가격과 실제 사용분 비용을 구분해 적는 것이 핵심입니다.</p></section>
+<section class="guide-section"><h2>2. 판매 가능한 수량으로 나눕니다</h2><p>12개로 잘랐지만 시식·파손으로 2개를 팔지 못했다면 판매 가능 수량은 10개. 식재료비는 9,600 ÷ 10 = 개당 960원입니다. 손실을 여기서 이미 반영했으니 같은 손실률을 또 더하지 마세요. 실제로는 여러 번 만든 기록을 보고 수량을 조정하세요.</p></section>
+<section class="guide-section"><h2>3. 포장재를 더합니다</h2><p>종이 받침 40원, 상자 180원, 스티커 20원 = 개당 240원. 한 개 원가는 960 + 240 = 1,200원입니다. 매장 이용과 포장의 구성이 다르다면 각각 계산합니다.</p></section>
+<section class="guide-section"><h2>4. 목표 원가율에서 가격을 역산합니다</h2><p>예시 목표 원가율을 30%로 정하면 1,200 ÷ 0.30 = 4,000원이 계산상 판매가입니다. 30%는 모든 카페에 맞는 기준이 아닙니다. 만드는 시간과 매장 운영비, 손님이 비교하는 메뉴를 함께 보고 가격을 판단하세요. 발주 단가가 바뀌면 원가율도 다시 계산합니다. 홀케이크를 조각으로 팔 때도 모양이 나오지 않는 자투리 등 실제 판매하지 못하는 분량을 확인하세요.</p></section>
+<p>이 예시의 매입액과 판매가는 모두 부가세 포함 기준입니다. 원가율 30%의 나머지 70%가 순이익은 아닙니다. 인건비, 임차료, 전기료, 결제 수수료 등도 부담해야 합니다.</p>
+<section class="guide-section" id="app"><h2>앱으로 따라 계산하기</h2><p>통화를 KRW로 맞추고 식재료와 포장재의 구매 수량·전체 가격을 각각 등록합니다. 메뉴 &#x27;브라우니(포장)&#x27;의 &#x27;배치당 제공 횟수&#x27;를 10으로 맞추고 버터 200g, 초콜릿 300g 등 한 판 전체 사용량을 넣으세요. 포장재도 받침·상자·스티커 각 10개를 입력해야 개당 포장비가 정확히 나뉩니다. 배치 원가 12,000원, 개당 원가 1,200원을 확인한 뒤 판매가 4,000원을 입력해 원가율 30%를 확인합니다. 자세한 순서는 키친마진 한국어 사용 가이드에서 확인할 수 있습니다.</p><p><a class="text-link" href="../../guides/latte-cost/">한국어 단계별 사용 가이드 열기 →</a></p></section>
+<section class="guide-section" aria-labelledby="screens"><h2 id="screens">앱 화면으로 확인하기</h2><p class="muted">출시된 1.2 앱을 iPhone 시뮬레이터에서 직접 캡처한 한국어 화면입니다. 입력값은 설명용 가정이며 실제 매장 자료가 아닙니다.</p><div class="blog-screens"><figure><a href="../../../assets/blog/brownie-servings.png"><img src="../../../assets/blog/brownie-servings.png" width="1206" height="2622" loading="lazy" decoding="async" alt="배치당 제공 횟수를 판매 가능한 10개로 정하고 한 판 전체 재료량을 입력합니다."></a><figcaption>배치당 제공 횟수를 판매 가능한 10개로 정하고 한 판 전체 재료량을 입력합니다.</figcaption></figure>
+<figure><a href="../../../assets/blog/brownie-batch-packaging.png"><img src="../../../assets/blog/brownie-batch-packaging.png" width="1206" height="2622" loading="lazy" decoding="async" alt="스티커 10개를 포함한 전체 배치의 포장재를 입력합니다. 배치 원가 12,000원, 개당 1,200원입니다."></a><figcaption>스티커 10개를 포함한 전체 배치의 포장재를 입력합니다. 배치 원가 12,000원, 개당 1,200원입니다.</figcaption></figure>
+<figure><a href="../../../assets/blog/brownie-result.png"><img src="../../../assets/blog/brownie-result.png" width="1206" height="2622" loading="lazy" decoding="async" alt="개당 원가 1,200원, 판매가 4,000원에서 원가율은 30%입니다."></a><figcaption>개당 원가 1,200원, 판매가 4,000원에서 원가율은 30%입니다.</figcaption></figure></div></section>
+<p>iPhone 앱 Kitchen Margin(키친마진)은 입력한 배치 사용량과 포장재로 1인분 원가를 자동 계산합니다.</p>
+</article><aside class="end-note"><h2>함께 읽기</h2><ul><li><a href="../americano-cost/">카페 음료 원가 계산법 — 아메리카노 한 잔의 진짜 원가</a></li><li><a href="../strawberry-milk-cost/">식자재·포장재 비용까지 포함한 메뉴 원가 계산 실전</a></li></ul><a class="text-link" href="../">전체 글 →</a></aside></main>
+<footer class="site-footer"><div class="shell footer-inner">
+  <p>Kitchen Margin · 개발자 Norman Zeng</p>
+  <nav aria-label="하단 메뉴">
+    <a href="https://apps.apple.com/kr/app/kitchen-margin/id6816125261">App Store에서 다운로드</a>
+    <a href="../../support/">고객 지원</a>
+    <a href="../../privacy/">개인정보 처리방침</a>
+    <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">이용 약관</a>
+  </nav>
+</div></footer>
+</body></html>
