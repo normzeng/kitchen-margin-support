@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bar Pour Cost &amp; Baker’s Percentage Calculator — Kitchen Margin</title>
+  <meta name="description" content="Free interactive bar liquor pour cost calculator and bakery baker’s percentage batch scaling and cost calculator.">
+  <meta name="color-scheme" content="light">
+  <link rel="canonical" href="https://kitchenmargin.blackvaletechnologies.com/tools/pour-and-bakers/">
+  <link rel="alternate" hreflang="en" href="https://kitchenmargin.blackvaletechnologies.com/tools/pour-and-bakers/">
+  <link rel="alternate" hreflang="ko" href="https://kitchenmargin.blackvaletechnologies.com/ko/tools/">
+  <link rel="alternate" hreflang="x-default" href="https://kitchenmargin.blackvaletechnologies.com/tools/pour-and-bakers/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Bar Pour Cost &amp; Baker’s Percentage Calculator — Kitchen Margin">
+  <meta property="og:description" content="Calculate cocktail pour cost % from bottle size and price, or scale bakery dough recipes by flour weight with batch and per-loaf cost.">
+  <meta property="og:url" content="https://kitchenmargin.blackvaletechnologies.com/tools/pour-and-bakers/">
+  <meta property="og:image" content="https://kitchenmargin.blackvaletechnologies.com/assets/media/marketing-preview-en.webp">
+  <link rel="stylesheet" href="../../assets/site.css">
+</head><body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="shell header-inner">
+  <a class="brand" href="../../" aria-label="Kitchen Margin home"><img class="brand-mark" src="../../assets/kitchen-margin.jpg" width="44" height="44" alt=""><span>Kitchen Margin</span></a>
+  <nav aria-label="Main">
+    <a href="../" aria-current="page">Free Calculators</a>
+    <a href="../../blog/">Café Cost Notes</a>
+    <a href="../../guides/latte-cost/">Latte cost guide</a>
+    <a href="../../support/">Support</a>
+    <a href="../../ko/tools/" lang="ko">한국어</a>
+  </nav>
+</div></header>
+<main id="main" class="shell guide-document">
+  <header class="page-heading">
+    <p class="eyebrow"><a href="../">Free Calculators</a> · Bar &amp; Bakery</p>
+    <h1>Bar Pour Cost &amp; Baker’s Percentage Calculators</h1>
+    <p class="lead">Built from the same concept-pack engines inside Kitchen Margin: calculate exact spirit and cocktail pour costs below, or jump down to the <a href="#bakers-calculator">Baker’s Percentage &amp; Batch Cost Calculator</a>.</p>
+  </header>
+
+  <section id="pour-calculator" aria-labelledby="pour-heading">
+    <h2 id="pour-heading">Part A · Bar &amp; Cocktail Pour Cost Calculator</h2>
+    <div class="calc-layout">
+      <div class="calc-panel">
+        <h3>Bottle &amp; Pour Inputs</h3>
+        <div class="calc-field-grid">
+          <div class="calc-field">
+            <label for="bottleMl">Bottle volume (ml)</label>
+            <select id="bottleMl">
+              <option value="750" selected>750 ml (25.36 fl oz)</option>
+              <option value="1000">1,000 ml (1 Liter · 33.8 fl oz)</option>
+              <option value="1750">1,750 ml (Handle · 59.2 fl oz)</option>
+              <option value="700">700 ml (UK/EU Standard)</option>
+            </select>
+          </div>
+          <div class="calc-field">
+            <label for="bottlePrice">Bottle purchase price ($)</label>
+            <input id="bottlePrice" type="number" min="0" step="any" value="28.00">
+          </div>
+          <div class="calc-field">
+            <label for="pourMl">Spirit pour per drink (ml)</label>
+            <input id="pourMl" type="number" min="1" step="any" value="45">
+            <span class="hint">1.5 oz ≈ 45 ml · 2.0 oz ≈ 60 ml</span>
+          </div>
+          <div class="calc-field">
+            <label for="usableYieldPct">Usable bottle yield %</label>
+            <input id="usableYieldPct" type="number" min="50" max="100" step="1" value="95">
+            <span class="hint">95% accounts for 5% spill/overpour</span>
+          </div>
+          <div class="calc-field">
+            <label for="mixerGarnish">Mixer, citrus &amp; garnish ($)</label>
+            <input id="mixerGarnish" type="number" min="0" step="any" value="0.65">
+          </div>
+          <div class="calc-field">
+            <label for="drinkPrice">Menu drink price ($)</label>
+            <input id="drinkPrice" type="number" min="0.1" step="any" value="14.00">
+          </div>
+          <div class="calc-field full">
+            <label for="targetPourPct">Target pour cost %</label>
+            <input id="targetPourPct" type="number" min="5" max="80" step="1" value="18">
+          </div>
+        </div>
+      </div>
+
+      <div class="calc-results-panel" aria-live="polite">
+        <span class="calc-tag" id="pourBadge">Pour Cost Check</span>
+        <h3>Cocktail Margin Result</h3>
+        <div class="calc-stat-list">
+          <div class="calc-stat">
+            <span class="calc-stat-label">Sellable pours per bottle</span>
+            <span class="calc-stat-value" id="outPoursPerBottle">15.8 pours</span>
+          </div>
+          <div class="calc-stat">
+            <span class="calc-stat-label">Spirit cost per pour (yield-adjusted)</span>
+            <span class="calc-stat-value" id="outSpiritCost">$1.77</span>
+          </div>
+          <div class="calc-stat">
+            <span class="calc-stat-label">Total drink cost (spirit + mixer/garnish)</span>
+            <span class="calc-stat-value" id="outDrinkCost">$2.42</span>
+          </div>
+          <div class="calc-stat highlight">
+            <span class="calc-stat-label">Drink pour cost %</span>
+            <span class="calc-stat-value" id="outPourPct">17.27%</span>
+          </div>
+          <div class="calc-stat">
+            <span class="calc-stat-label">Suggested price at <span id="outPourTargetLbl">18</span>% target</span>
+            <span class="calc-stat-value" id="outPourSuggested">$13.44</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="guide-section" id="bakers-calculator" aria-labelledby="bakers-heading">
+    <h2 id="bakers-heading">Part B · Baker’s Percentage &amp; Batch Cost Calculator</h2>
+    <p>In baker’s math, total flour is always <strong>100%</strong>. Change your total flour weight below to scale the entire dough batch without losing your percentages, and see the batch and per-portion ingredient cost.</p>
+    <div class="calc-layout">
+      <div class="calc-panel">
+        <h3>Dough Formula (Flour = 100%)</h3>
+        <div class="calc-field-grid">
+          <div class="calc-field">
+            <label for="flourG">Total flour weight (g · 100%)</label>
+            <input id="flourG" type="number" min="100" step="50" value="5000">
+          </div>
+          <div class="calc-field">
+            <label for="flourKgPrice">Flour price per kg ($)</label>
+            <input id="flourKgPrice" type="number" min="0" step="any" value="1.65">
+          </div>
+          <div class="calc-field">
+            <label for="waterPct">Hydration / water (%)</label>
+            <input id="waterPct" type="number" min="0" step="1" value="72">
+          </div>
+          <div class="calc-field">
+            <label for="saltPct">Salt (%)</label>
+            <input id="saltPct" type="number" min="0" step="0.1" value="2.2">
+          </div>
+          <div class="calc-field">
+            <label for="enrichPct">Butter / sugar / enrichments (%)</label>
+            <input id="enrichPct" type="number" min="0" step="1" value="15">
+          </div>
+          <div class="calc-field">
+            <label for="enrichKgPrice">Enrichment price per kg ($)</label>
+            <input id="enrichKgPrice" type="number" min="0" step="any" value="9.50">
+          </div>
+          <div class="calc-field">
+            <label for="batchPortions">Portions / loaves from batch</label>
+            <input id="batchPortions" type="number" min="1" step="1" value="12">
+          </div>
+          <div class="calc-field">
+            <label for="bakeTargetPct">Target food cost %</label>
+            <input id="bakeTargetPct" type="number" min="5" max="90" step="1" value="25">
+          </div>
+        </div>
+      </div>
+
+      <div class="calc-results-panel" aria-live="polite">
+        <span class="calc-tag">Scaled Batch &amp; Cost</span>
+        <h3>Scaled Weights &amp; Portion Cost</h3>
+        <div class="calc-stat-list">
+          <div class="calc-stat">
+            <span class="calc-stat-label">Scaled water &amp; salt weights</span>
+            <span class="calc-stat-value" id="outWaterSalt">3,600 g · 110 g</span>
+          </div>
+          <div class="calc-stat">
+            <span class="calc-stat-label">Scaled butter/enrichment weight</span>
+            <span class="calc-stat-value" id="outEnrichG">750 g</span>
+          </div>
+          <div class="calc-stat">
+            <span class="calc-stat-label">Total scaled dough weight</span>
+            <span class="calc-stat-value" id="outTotalDough">9,460 g</span>
+          </div>
+          <div class="calc-stat">
+            <span class="calc-stat-label">Total batch ingredient cost</span>
+            <span class="calc-stat-value" id="outBatchCost">$15.54</span>
+          </div>
+          <div class="calc-stat highlight">
+            <span class="calc-stat-label">Cost per portion / loaf</span>
+            <span class="calc-stat-value" id="outLoafCost">$1.30</span>
+          </div>
+          <div class="calc-stat">
+            <span class="calc-stat-label">Suggested price at <span id="outBakeTargetLbl">25</span>% target</span>
+            <span class="calc-stat-value" id="outBakeSuggested">$5.18</span>
+          </div>
+        </div>
+        <div class="calc-cta-group">
+          <a class="button" href="https://apps.apple.com/us/app/kitchen-margin/id6816125261?pt=128429710&amp;ct=calc_pour_bakers_en&amp;mt=8">Download Free on iPhone (10 Free Scans/Mo) ↗</a>
+          <a class="text-link" href="https://blackvaletechnologies.com/kitchen-margin/app/">Scale Recipes in Browser Web App →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="site-footer"><div class="shell footer-inner">
+  <p>Kitchen Margin · Developed by Norman Zeng</p>
+  <nav aria-label="Footer">
+    <a href="../">All Calculators</a>
+    <a href="../../support/">Support</a>
+    <a href="../../privacy/">Privacy</a>
+  </nav>
+</div></footer>
+<script>
+(function () {
+  function calcPour() {
+    var bottleMl = parseFloat(document.getElementById('bottleMl').value) || 750;
+    var bottlePrice = parseFloat(document.getElementById('bottlePrice').value) || 0;
+    var pourMl = Math.max(1, parseFloat(document.getElementById('pourMl').value) || 45);
+    var yieldPct = Math.max(1, parseFloat(document.getElementById('usableYieldPct').value) || 95) / 100;
+    var mixer = parseFloat(document.getElementById('mixerGarnish').value) || 0;
+    var price = Math.max(0.01, parseFloat(document.getElementById('drinkPrice').value) || 1);
+    var target = Math.max(1, parseFloat(document.getElementById('targetPourPct').value) || 18);
+
+    var usableMl = bottleMl * yieldPct;
+    var pours = usableMl / pourMl;
+    var spiritCost = bottlePrice / pours;
+    var totalCost = spiritCost + mixer;
+    var pourPct = (totalCost / price) * 100;
+    var suggested = totalCost / (target / 100);
+
+    document.getElementById('outPoursPerBottle').textContent = pours.toFixed(1) + ' pours';
+    document.getElementById('outSpiritCost').textContent = '$' + spiritCost.toFixed(2);
+    document.getElementById('outDrinkCost').textContent = '$' + totalCost.toFixed(2);
+    document.getElementById('outPourPct').textContent = pourPct.toFixed(2) + '%';
+    document.getElementById('outPourTargetLbl').textContent = target.toFixed(0);
+    document.getElementById('outPourSuggested').textContent = '$' + suggested.toFixed(2);
+    var badge = document.getElementById('pourBadge');
+    badge.textContent = pourPct > target ? ('Above ' + target.toFixed(0) + '% target') : ('Within ' + target.toFixed(0) + '% target');
+    badge.className = pourPct > target ? 'calc-tag warn' : 'calc-tag';
+  }
+  function calcBaker() {
+    var flourG = Math.max(1, parseFloat(document.getElementById('flourG').value) || 5000);
+    var flourPrice = parseFloat(document.getElementById('flourKgPrice').value) || 0;
+    var waterPct = parseFloat(document.getElementById('waterPct').value) || 0;
+    var saltPct = parseFloat(document.getElementById('saltPct').value) || 0;
+    var enrichPct = parseFloat(document.getElementById('enrichPct').value) || 0;
+    var enrichPrice = parseFloat(document.getElementById('enrichKgPrice').value) || 0;
+    var portions = Math.max(1, parseFloat(document.getElementById('batchPortions').value) || 1);
+    var target = Math.max(1, parseFloat(document.getElementById('bakeTargetPct').value) || 25);
+
+    var waterG = flourG * (waterPct / 100);
+    var saltG = flourG * (saltPct / 100);
+    var enrichG = flourG * (enrichPct / 100);
+    var totalG = flourG + waterG + saltG + enrichG;
+    var batchCost = (flourG / 1000) * flourPrice + (enrichG / 1000) * enrichPrice + (saltG / 1000) * 1.50;
+    var loafCost = batchCost / portions;
+    var suggested = loafCost / (target / 100);
+
+    document.getElementById('outWaterSalt').textContent = Math.round(waterG).toLocaleString('en-US') + ' g · ' + Math.round(saltG).toLocaleString('en-US') + ' g';
+    document.getElementById('outEnrichG').textContent = Math.round(enrichG).toLocaleString('en-US') + ' g';
+    document.getElementById('outTotalDough').textContent = Math.round(totalG).toLocaleString('en-US') + ' g';
+    document.getElementById('outBatchCost').textContent = '$' + batchCost.toFixed(2);
+    document.getElementById('outLoafCost').textContent = '$' + loafCost.toFixed(2);
+    document.getElementById('outBakeTargetLbl').textContent = target.toFixed(0);
+    document.getElementById('outBakeSuggested').textContent = '$' + suggested.toFixed(2);
+  }
+  ['bottleMl','bottlePrice','pourMl','usableYieldPct','mixerGarnish','drinkPrice','targetPourPct'].forEach(function (id) {
+    document.getElementById(id).addEventListener('input', calcPour);
+    document.getElementById(id).addEventListener('change', calcPour);
+  });
+  ['flourG','flourKgPrice','waterPct','saltPct','enrichPct','enrichKgPrice','batchPortions','bakeTargetPct'].forEach(function (id) {
+    document.getElementById(id).addEventListener('input', calcBaker);
+    document.getElementById(id).addEventListener('change', calcBaker);
+  });
+  calcPour();
+  calcBaker();
+})();
+</script>
+</body></html>

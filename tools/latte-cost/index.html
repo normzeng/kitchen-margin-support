@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Café Latte Cost &amp; Milk/Bean Price-Hike Calculator — Kitchen Margin</title>
+  <meta name="description" content="Calculate your exact cost per cup for an iced or hot latte, including espresso beans, milk, oat milk, syrup, cup, and lid—and simulate supplier price hikes.">
+  <meta name="color-scheme" content="light">
+  <link rel="canonical" href="https://kitchenmargin.blackvaletechnologies.com/tools/latte-cost/">
+  <link rel="alternate" hreflang="en" href="https://kitchenmargin.blackvaletechnologies.com/tools/latte-cost/">
+  <link rel="alternate" hreflang="ko" href="https://kitchenmargin.blackvaletechnologies.com/ko/tools/">
+  <link rel="alternate" hreflang="x-default" href="https://kitchenmargin.blackvaletechnologies.com/tools/latte-cost/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Café Latte Cost &amp; Milk/Bean Price-Hike Calculator — Kitchen Margin">
+  <meta property="og:description" content="See what one cup of coffee or latte actually costs from your bag and carton prices, and test supplier price increases in seconds.">
+  <meta property="og:url" content="https://kitchenmargin.blackvaletechnologies.com/tools/latte-cost/">
+  <meta property="og:image" content="https://kitchenmargin.blackvaletechnologies.com/assets/media/marketing-preview-en.webp">
+  <link rel="stylesheet" href="../../assets/site.css">
+</head><body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="shell header-inner">
+  <a class="brand" href="../../" aria-label="Kitchen Margin home"><img class="brand-mark" src="../../assets/kitchen-margin.jpg" width="44" height="44" alt=""><span>Kitchen Margin</span></a>
+  <nav aria-label="Main">
+    <a href="../" aria-current="page">Free Calculators</a>
+    <a href="../../blog/">Café Cost Notes</a>
+    <a href="../../guides/latte-cost/">Latte cost guide</a>
+    <a href="../../support/">Support</a>
+    <a href="../../ko/tools/" lang="ko">한국어</a>
+  </nav>
+</div></header>
+<main id="main" class="shell guide-document">
+  <header class="page-heading">
+    <p class="eyebrow"><a href="../">Free Calculators</a> · Café &amp; Coffee Bar</p>
+    <h1>Café Latte Cost &amp; Price-Hike Simulator</h1>
+    <p class="lead">Enter what you pay for a bag of beans, a carton or gallon of milk, and your takeaway cup and lid. Then test a milk or bean price increase to see the exact cent-by-cent impact on every cup you serve.</p>
+  </header>
+
+  <div class="calc-presets" role="group" aria-label="Café drink presets">
+    <button type="button" class="calc-preset" data-preset="usLatte" aria-pressed="true">12 oz Cafe Latte (USD)</button>
+    <button type="button" class="calc-preset" data-preset="usOatLatte" aria-pressed="false">16 oz Iced Oat Vanilla Latte (USD)</button>
+    <button type="button" class="calc-preset" data-preset="krLatte" aria-pressed="false">Seoul Cafe Latte (KRW ₩)</button>
+    <button type="button" class="calc-preset" data-preset="auFlatWhite" aria-pressed="false">Melbourne Flat White (AUD $)</button>
+  </div>
+
+  <div class="calc-layout">
+    <section class="calc-panel" aria-labelledby="latte-inputs">
+      <h2 id="latte-inputs">1. Purchased Packs &amp; Recipe Quantities</h2>
+      <div class="calc-field-grid">
+        <div class="calc-field">
+          <label for="lCur">Currency</label>
+          <select id="lCur">
+            <option value="$" data-dec="2">$ (USD / AUD)</option>
+            <option value="£" data-dec="2">£ (GBP)</option>
+            <option value="₩" data-dec="0">₩ (KRW)</option>
+            <option value="NT$" data-dec="0">NT$ (TWD)</option>
+          </select>
+        </div>
+        <div class="calc-field">
+          <label for="beanPackG">Bean bag weight (grams)</label>
+          <input id="beanPackG" type="number" min="1" step="any" value="2268">
+          <span class="hint">5 lb = 2,268 g · 1 kg = 1,000 g</span>
+        </div>
+        <div class="calc-field">
+          <label for="beanPrice">Bean bag price</label>
+          <input id="beanPrice" type="number" min="0" step="any" value="52.00">
+        </div>
+        <div class="calc-field">
+          <label for="beanDoseG">Espresso dose per cup (g)</label>
+          <input id="beanDoseG" type="number" min="0" step="any" value="18">
+          <span class="hint">Include dial-in/purge allowance if desired</span>
+        </div>
+        <div class="calc-field">
+          <label for="milkPackMl">Milk carton/jug volume (ml)</label>
+          <input id="milkPackMl" type="number" min="1" step="any" value="3785">
+          <span class="hint">1 US gal = 3,785 ml · 1 L = 1,000 ml</span>
+        </div>
+        <div class="calc-field">
+          <label for="milkPrice">Milk carton/jug price</label>
+          <input id="milkPrice" type="number" min="0" step="any" value="4.80">
+        </div>
+        <div class="calc-field">
+          <label for="milkUseMl">Milk used per cup (ml)</label>
+          <input id="milkUseMl" type="number" min="0" step="any" value="240">
+          <span class="hint">8 fl oz ≈ 240 ml · 10 fl oz ≈ 300 ml</span>
+        </div>
+        <div class="calc-field">
+          <label for="syrupCost">Syrup / ice / extra per cup</label>
+          <input id="syrupCost" type="number" min="0" step="any" value="0.00">
+        </div>
+        <div class="calc-field">
+          <label for="packCost">Cup + lid + sleeve + straw</label>
+          <input id="packCost" type="number" min="0" step="any" value="0.22">
+        </div>
+        <div class="calc-field">
+          <label for="sellPrice">Menu selling price (pre-tax)</label>
+          <input id="sellPrice" type="number" min="0" step="any" value="5.25">
+        </div>
+        <div class="calc-field">
+          <label for="hikePct">Simulate milk &amp; bean price hike (%)</label>
+          <input id="hikePct" type="number" min="0" max="100" step="1" value="15">
+          <span class="hint">Test a +15% supplier invoice increase</span>
+        </div>
+        <div class="calc-field">
+          <label for="targetCostPct">Target drink cost %</label>
+          <input id="targetCostPct" type="number" min="1" max="95" step="1" value="22">
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-results-panel" aria-labelledby="latte-results" aria-live="polite">
+      <span class="calc-tag" id="latteBadge">Current vs. Price Hike</span>
+      <h2 id="latte-results">2. Cost Per Cup Breakdown</h2>
+      <div class="calc-stat-list">
+        <div class="calc-stat">
+          <span class="calc-stat-label">Espresso beans per cup</span>
+          <span class="calc-stat-value" id="resBean">$0.41</span>
+        </div>
+        <div class="calc-stat">
+          <span class="calc-stat-label">Milk per cup</span>
+          <span class="calc-stat-value" id="resMilk">$0.30</span>
+        </div>
+        <div class="calc-stat">
+          <span class="calc-stat-label">Packaging &amp; extras per cup</span>
+          <span class="calc-stat-value" id="resPack">$0.22</span>
+        </div>
+        <div class="calc-stat">
+          <span class="calc-stat-label">Current total cost per cup</span>
+          <span class="calc-stat-value" id="resTotal">$0.93 (17.8%)</span>
+        </div>
+        <div class="calc-stat highlight">
+          <span class="calc-stat-label">Cost after +<span id="resHikeLabel">15</span>% milk &amp; bean hike</span>
+          <span class="calc-stat-value" id="resHikeTotal">$1.04 (+$0.11)</span>
+        </div>
+        <div class="calc-stat">
+          <span class="calc-stat-label">Price at <span id="resTargetLabel">22</span>% target after hike</span>
+          <span class="calc-stat-value" id="resSuggested">$4.74</span>
+        </div>
+      </div>
+      <p class="muted">Costs cover entered ingredients and packaging only; barista labor, rent, and equipment are separate.</p>
+      <div class="calc-cta-group">
+        <a class="button" href="https://apps.apple.com/us/app/kitchen-margin/id6816125261?pt=128429710&amp;ct=calc_latte_en&amp;mt=8">Track Your Full Café Menu on iPhone ↗</a>
+        <a class="text-link" href="https://blackvaletechnologies.com/kitchen-margin/app/">Import Your Café Sheet in Browser →</a>
+      </div>
+    </section>
+  </div>
+</main>
+<footer class="site-footer"><div class="shell footer-inner">
+  <p>Kitchen Margin · Developed by Norman Zeng</p>
+  <nav aria-label="Footer">
+    <a href="../">All Calculators</a>
+    <a href="../../guides/latte-cost/">Latte cost guide</a>
+    <a href="../../support/">Support</a>
+    <a href="../../privacy/">Privacy</a>
+  </nav>
+</div></footer>
+<script>
+(function () {
+  var presets = {
+    usLatte: { cur: '$', beanPackG: 2268, beanPrice: 52.00, beanDoseG: 18, milkPackMl: 3785, milkPrice: 4.80, milkUseMl: 240, syrupCost: 0, packCost: 0.22, sellPrice: 5.25, hikePct: 15, targetCostPct: 22 },
+    usOatLatte: { cur: '$', beanPackG: 2268, beanPrice: 54.00, beanDoseG: 18, milkPackMl: 946, milkPrice: 3.60, milkUseMl: 240, syrupCost: 0.28, packCost: 0.26, sellPrice: 6.50, hikePct: 15, targetCostPct: 25 },
+    krLatte: { cur: '₩', beanPackG: 1000, beanPrice: 22000, beanDoseG: 18, milkPackMl: 1000, milkPrice: 2600, milkUseMl: 200, syrupCost: 0, packCost: 150, sellPrice: 4500, hikePct: 13, targetCostPct: 25 },
+    auFlatWhite: { cur: '$', beanPackG: 1000, beanPrice: 38.00, beanDoseG: 20, milkPackMl: 2000, milkPrice: 3.90, milkUseMl: 180, syrupCost: 0, packCost: 0.24, sellPrice: 5.50, hikePct: 12, targetCostPct: 24 }
+  };
+  var ids = ['lCur','beanPackG','beanPrice','beanDoseG','milkPackMl','milkPrice','milkUseMl','syrupCost','packCost','sellPrice','hikePct','targetCostPct'];
+  var els = {};
+  ids.forEach(function (id) { els[id] = document.getElementById(id); });
+  function fmt(v, sym, dec) {
+    return sym + v.toLocaleString('en-US', { minimumFractionDigits: dec, maximumFractionDigits: dec });
+  }
+  function update() {
+    var opt = els.lCur.options[els.lCur.selectedIndex];
+    var sym = els.lCur.value;
+    var dec = parseInt(opt.getAttribute('data-dec') || '2', 10);
+    var beanCost = (parseFloat(els.beanPrice.value) || 0) / Math.max(1, parseFloat(els.beanPackG.value) || 1) * (parseFloat(els.beanDoseG.value) || 0);
+    var milkCost = (parseFloat(els.milkPrice.value) || 0) / Math.max(1, parseFloat(els.milkPackMl.value) || 1) * (parseFloat(els.milkUseMl.value) || 0);
+    var pack = (parseFloat(els.syrupCost.value) || 0) + (parseFloat(els.packCost.value) || 0);
+    var total = beanCost + milkCost + pack;
+    var sell = Math.max(0.01, parseFloat(els.sellPrice.value) || 1);
+    var hike = (parseFloat(els.hikePct.value) || 0) / 100;
+    var hikedTotal = (beanCost + milkCost) * (1 + hike) + pack;
+    var delta = hikedTotal - total;
+    var target = Math.max(1, parseFloat(els.targetCostPct.value) || 22);
+    var suggested = hikedTotal / (target / 100);
+    var hikedPct = (hikedTotal / sell) * 100;
+
+    document.getElementById('resBean').textContent = fmt(beanCost, sym, dec);
+    document.getElementById('resMilk').textContent = fmt(milkCost, sym, dec);
+    document.getElementById('resPack').textContent = fmt(pack, sym, dec);
+    document.getElementById('resTotal').textContent = fmt(total, sym, dec) + ' (' + ((total / sell) * 100).toFixed(1) + '%)';
+    document.getElementById('resHikeLabel').textContent = (hike * 100).toFixed(0);
+    document.getElementById('resHikeTotal').textContent = fmt(hikedTotal, sym, dec) + ' (+' + fmt(delta, sym, dec) + ' · ' + hikedPct.toFixed(1) + '%)';
+    document.getElementById('resTargetLabel').textContent = target.toFixed(0);
+    document.getElementById('resSuggested').textContent = fmt(suggested, sym, dec);
+    var badge = document.getElementById('latteBadge');
+    if (hikedPct > target) {
+      badge.textContent = 'After hike: ' + hikedPct.toFixed(1) + '% (Above ' + target.toFixed(0) + '% target)';
+      badge.className = 'calc-tag warn';
+    } else {
+      badge.textContent = 'After hike: ' + hikedPct.toFixed(1) + '% (Within ' + target.toFixed(0) + '% target)';
+      badge.className = 'calc-tag';
+    }
+  }
+  ids.forEach(function (id) {
+    els[id].addEventListener('input', update);
+    els[id].addEventListener('change', update);
+  });
+  var btns = document.querySelectorAll('.calc-preset');
+  btns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var p = presets[btn.getAttribute('data-preset')];
+      if (!p) return;
+      btns.forEach(function (b) { b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
+      Object.keys(p).forEach(function (k) { if (els[k]) els[k].value = p[k]; });
+      update();
+    });
+  });
+  update();
+})();
+</script>
+</body></html>

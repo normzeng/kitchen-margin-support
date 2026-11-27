@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Food Truck &amp; Pop-Up Event Profit + Break-Even Calculator — Kitchen Margin</title>
+  <meta name="description" content="Calculate food truck, pop-up and catering event profit after ingredient COGS, pitch fees, commissary rent, fuel/propane, card processing, and event labor.">
+  <meta name="color-scheme" content="light">
+  <link rel="canonical" href="https://kitchenmargin.blackvaletechnologies.com/tools/food-truck-event/">
+  <link rel="alternate" hreflang="en" href="https://kitchenmargin.blackvaletechnologies.com/tools/food-truck-event/">
+  <link rel="alternate" hreflang="ko" href="https://kitchenmargin.blackvaletechnologies.com/ko/tools/">
+  <link rel="alternate" hreflang="x-default" href="https://kitchenmargin.blackvaletechnologies.com/tools/food-truck-event/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Food Truck &amp; Pop-Up Event Profit + Break-Even Calculator — Kitchen Margin">
+  <meta property="og:description" content="See your exact net per cover and break-even cover count before paying a festival pitch fee.">
+  <meta property="og:url" content="https://kitchenmargin.blackvaletechnologies.com/tools/food-truck-event/">
+  <meta property="og:image" content="https://kitchenmargin.blackvaletechnologies.com/assets/media/marketing-preview-en.webp">
+  <link rel="stylesheet" href="../../assets/site.css">
+</head><body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="shell header-inner">
+  <a class="brand" href="../../" aria-label="Kitchen Margin home"><img class="brand-mark" src="../../assets/kitchen-margin.jpg" width="44" height="44" alt=""><span>Kitchen Margin</span></a>
+  <nav aria-label="Main">
+    <a href="../" aria-current="page">Free Calculators</a>
+    <a href="../../blog/">Café Cost Notes</a>
+    <a href="../../guides/latte-cost/">Latte cost guide</a>
+    <a href="../../support/">Support</a>
+    <a href="../../ko/tools/" lang="ko">한국어</a>
+  </nav>
+</div></header>
+<main id="main" class="shell guide-document">
+  <header class="page-heading">
+    <p class="eyebrow"><a href="../">Free Calculators</a> · Food Trucks, Pop-Ups &amp; Catering</p>
+    <h1>Food Truck &amp; Pop-Up Event P&amp;L Calculator</h1>
+    <p class="lead">High cover counts at a festival or brewery pop-up can hide a loss once pitch fees, commissary rent, propane/generator fuel, card fees, and event labor are deducted. Model your event below before committing—or use the Events module in Kitchen Margin to generate your exact ingredient prep pull sheet.</p>
+  </header>
+
+  <div class="calc-layout">
+    <section class="calc-panel" aria-labelledby="event-inputs">
+      <h2 id="event-inputs">1. Event Covers, Costs &amp; Fees</h2>
+      <div class="calc-field-grid">
+        <div class="calc-field">
+          <label for="evCovers">Expected covers / orders</label>
+          <input id="evCovers" type="number" min="1" step="5" value="140">
+        </div>
+        <div class="calc-field">
+          <label for="evTicket">Average ticket per cover ($)</label>
+          <input id="evTicket" type="number" min="1" step="any" value="16.00">
+        </div>
+        <div class="calc-field">
+          <label for="evCogsPerCover">Ingredient + packaging COGS / cover ($)</label>
+          <input id="evCogsPerCover" type="number" min="0" step="any" value="4.80">
+        </div>
+        <div class="calc-field">
+          <label for="evCardPct">Card processing fee (%)</label>
+          <input id="evCardPct" type="number" min="0" max="20" step="0.1" value="2.7">
+        </div>
+        <div class="calc-field">
+          <label for="evPitchFee">Pitch / festival / spot fee ($)</label>
+          <input id="evPitchFee" type="number" min="0" step="any" value="350">
+        </div>
+        <div class="calc-field">
+          <label for="evCommissary">Commissary &amp; permit fee ($)</label>
+          <input id="evCommissary" type="number" min="0" step="any" value="120">
+        </div>
+        <div class="calc-field">
+          <label for="evFuel">Propane, generator fuel &amp; ice ($)</label>
+          <input id="evFuel" type="number" min="0" step="any" value="75">
+        </div>
+        <div class="calc-field">
+          <label for="evLabor">Event staff labor ($)</label>
+          <input id="evLabor" type="number" min="0" step="any" value="320">
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-results-panel" aria-labelledby="event-results" aria-live="polite">
+      <span class="calc-tag" id="evBadge">Event Standing</span>
+      <h2 id="event-results">2. Event P&amp;L &amp; Break-Even</h2>
+      <div class="calc-stat-list">
+        <div class="calc-stat">
+          <span class="calc-stat-label">Gross event revenue</span>
+          <span class="calc-stat-value" id="evOutRev">$2,240.00</span>
+        </div>
+        <div class="calc-stat">
+          <span class="calc-stat-label">Total food &amp; packaging COGS</span>
+          <span class="calc-stat-value" id="evOutCogs">$672.00 (30.0%)</span>
+        </div>
+        <div class="calc-stat">
+          <span class="calc-stat-label">Fixed event fees + fuel + card fees</span>
+          <span class="calc-stat-value" id="evOutFees">$605.48</span>
+        </div>
+        <div class="calc-stat">
+          <span class="calc-stat-label">Event labor</span>
+          <span class="calc-stat-value" id="evOutLabor">$320.00</span>
+        </div>
+        <div class="calc-stat highlight">
+          <span class="calc-stat-label">Estimated event net (and net / cover)</span>
+          <span class="calc-stat-value" id="evOutNet">$642.52 ($4.59 / cover)</span>
+        </div>
+        <div class="calc-stat">
+          <span class="calc-stat-label">Break-even covers needed</span>
+          <span class="calc-stat-value" id="evOutBreakeven">81 covers</span>
+        </div>
+      </div>
+      <p class="muted">Labeled estimate based on your entered covers, per-cover COGS, fees, and labor. In the app, the Events module compares planned vs. actual covers and expands recipes into a shareable ingredient pull sheet.</p>
+      <div class="calc-cta-group">
+        <a class="button" href="https://apps.apple.com/us/app/kitchen-margin/id6816125261?pt=128429710&amp;ct=calc_event_en&amp;mt=8">Build Event Pull Sheets on iPhone ↗</a>
+        <a class="text-link" href="https://blackvaletechnologies.com/kitchen-margin/app/">Open Free Browser Web App →</a>
+      </div>
+    </section>
+  </div>
+</main>
+<footer class="site-footer"><div class="shell footer-inner">
+  <p>Kitchen Margin · Developed by Norman Zeng</p>
+  <nav aria-label="Footer">
+    <a href="../">All Calculators</a>
+    <a href="../../support/">Support</a>
+    <a href="../../privacy/">Privacy</a>
+  </nav>
+</div></footer>
+<script>
+(function () {
+  var ids = ['evCovers','evTicket','evCogsPerCover','evCardPct','evPitchFee','evCommissary','evFuel','evLabor'];
+  function recalc() {
+    var covers = Math.max(1, parseFloat(document.getElementById('evCovers').value) || 1);
+    var ticket = Math.max(0.01, parseFloat(document.getElementById('evTicket').value) || 0);
+    var cogsUnit = parseFloat(document.getElementById('evCogsPerCover').value) || 0;
+    var cardPct = (parseFloat(document.getElementById('evCardPct').value) || 0) / 100;
+    var fixed = (parseFloat(document.getElementById('evPitchFee').value) || 0) +
+                (parseFloat(document.getElementById('evCommissary').value) || 0) +
+                (parseFloat(document.getElementById('evFuel').value) || 0);
+    var labor = parseFloat(document.getElementById('evLabor').value) || 0;
+
+    var rev = covers * ticket;
+    var cogs = covers * cogsUnit;
+    var cardFee = rev * cardPct;
+    var totalFees = fixed + cardFee;
+    var net = rev - cogs - totalFees - labor;
+    var netPerCover = net / covers;
+    var contribPerCover = ticket * (1 - cardPct) - cogsUnit;
+    var breakeven = contribPerCover > 0 ? Math.ceil((fixed + labor) / contribPerCover) : Infinity;
+
+    document.getElementById('evOutRev').textContent = '$' + rev.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    document.getElementById('evOutCogs').textContent = '$' + cogs.toFixed(2) + ' (' + ((cogs / Math.max(1, rev)) * 100).toFixed(1) + '%)';
+    document.getElementById('evOutFees').textContent = '$' + totalFees.toFixed(2);
+    document.getElementById('evOutLabor').textContent = '$' + labor.toFixed(2);
+    document.getElementById('evOutNet').textContent = (net < 0 ? '−$' : '$') + Math.abs(net).toFixed(2) + ' (' + (netPerCover < 0 ? '−$' : '$') + Math.abs(netPerCover).toFixed(2) + ' / cover)';
+    document.getElementById('evOutBreakeven').textContent = isFinite(breakeven) ? (breakeven + ' covers') : 'Unreachable (COGS > ticket)';
+    var badge = document.getElementById('evBadge');
+    if (net <= 0) {
+      badge.textContent = 'Below break-even (' + (isFinite(breakeven) ? ('Need ' + breakeven + ' covers') : 'Check ticket price') + ')';
+      badge.className = 'calc-tag warn';
+    } else {
+      badge.textContent = 'Profitable above ' + breakeven + ' covers';
+      badge.className = 'calc-tag';
+    }
+  }
+  ids.forEach(function (id) {
+    document.getElementById(id).addEventListener('input', recalc);
+    document.getElementById(id).addEventListener('change', recalc);
+  });
+  recalc();
+})();
+</script>
+</body></html>
